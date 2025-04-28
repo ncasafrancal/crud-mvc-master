@@ -20,6 +20,11 @@ class Usuario {
         return $usuario;
     }
 
+    public function update($id, $name, $lastname) {
+        $stmt = $this->conexion->prepare("UPDATE Usuario SET name=?, lastname=? WHERE id=?");
+        return $stmt->execute([$name, $lastname, $id]);
+    }
+
 }
 
 ?>

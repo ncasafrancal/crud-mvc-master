@@ -22,7 +22,13 @@
                 $usuario->index();
                 break;
             case "editar":
-                $usuario->editar($id);
+                $usuario->find($id);
+                break;
+            case "update":
+                $id = $_GET['id'];
+                $name = $_POST['name'];
+                $lastname = $_POST['lastname'];
+                $usuario->update($id, $name, $lastname);
                 break;
         }
 

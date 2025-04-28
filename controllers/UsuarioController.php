@@ -15,9 +15,14 @@ class UsuarioController {
         include 'views/usuarios/index.php';
     }
 
-    public function editar($id) {
+    public function find($id) {
         $usuario = $this->usuario->find($id);
         include 'views/usuarios/editar.php';
+    }
+
+    public function update($id, $name, $lastname) {
+        $userUpdate = $this->usuario->update($id, $name, $lastname);
+        header('Location: index.php');
     }
 }
 
