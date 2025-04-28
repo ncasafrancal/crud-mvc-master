@@ -30,6 +30,9 @@
                 $lastname = $_POST['lastname'];
                 $usuario->update($id, $name, $lastname);
                 break;
+            case "eliminar":
+                $usuario->delete($id);
+                break;
         }
 
         //$usuario->index();

@@ -25,6 +25,11 @@ class Usuario {
         return $stmt->execute([$name, $lastname, $id]);
     }
 
+    public function delete($id) {
+        $stmt = $this->conexion->prepare("DELETE FROM Usuario WHERE id=?");
+        return $stmt->execute([$id]);
+    }
+
 }
 
 ?>

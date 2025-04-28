@@ -25,8 +25,8 @@
                         <td>$usuario[name]</td>
                         <td>$usuario[lastname]</td>
                         <td>
-                            <a href=index.php?action=editar&id=$usuario[id]>Editar</a>
-                            <a href=#>Eliminar</a>
+                            <a href=index.php?action=editar&id=$usuario[id]&name=$usuario[name]&lastname=$usuario[lastname]>Editar</a>
+                            <a href=index.php?action=eliminar&id=$usuario[id]&name=$usuario[name]&lastname=$usuario[lastname]>Eliminar</a>
                         <td>
                     </tr>";
             }

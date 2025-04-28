@@ -24,6 +24,11 @@ class UsuarioController {
         $userUpdate = $this->usuario->update($id, $name, $lastname);
         header('Location: index.php');
     }
+
+    public function delete($id){
+        $userDelete = $this->usuario->delete($id);
+        header('Location: index.php');
+    }
 }
 
 ?>

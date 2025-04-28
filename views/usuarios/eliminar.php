@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.: Editar :.</title>
+    <title>.: Eliminar :.</title>
 </head>
 <body>
-    <h1>Editar</h1>
+    <h1>Eliminar</h1>
 
     <form action="index.php?action=update&id=<?php echo $_GET['id']; ?>" method="POST">
         <div class="mb-3">
