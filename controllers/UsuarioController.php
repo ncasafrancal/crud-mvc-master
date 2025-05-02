@@ -1,6 +1,6 @@
 <?php
 
-require_once 'models/Usuario.php';
+require_once __DIR__ . '/../models/Usuario.php';
 
 class UsuarioController {
 
@@ -12,12 +12,12 @@ class UsuarioController {
 
     public function index() {
         $usuarios = $this->usuario->all();
-        include 'views/usuarios/index.php';
+        include __DIR__ . '/../views/usuarios/index.php';
     }
 
     public function find($id) {
         $usuario = $this->usuario->find($id);
-        include 'views/usuarios/editar.php';
+        include __DIR__ . '/../views/usuarios/editar.php';
     }
 
     public function update($id, $name, $lastname) {
@@ -27,6 +27,15 @@ class UsuarioController {
 
     public function delete($id){
         $userDelete = $this->usuario->delete($id);
+        header('Location: index.php');
+    }
+
+    public function create() {
+        include __DIR__ . '/../views/usuarios/create.php';
+    }
+
+    public function store($data) {
+        $userCreate = $this->usuario->store($data);
         header('Location: index.php');
     }
 }

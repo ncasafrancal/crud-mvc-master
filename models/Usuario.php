@@ -1,6 +1,6 @@
 <?php
 
-require_once 'config/database.php';
+require_once __DIR__ . '/../config/database.php';
 
 class Usuario {
     private $conexion;
@@ -28,6 +28,12 @@ class Usuario {
     public function delete($id) {
         $stmt = $this->conexion->prepare("DELETE FROM Usuario WHERE id=?");
         return $stmt->execute([$id]);
+    }
+
+    public function store($data){
+        $query = "INSERT INTO Usuario(id, name, lastname) VALUES(?,?,?)";
+        $stmt = $this->conexion->prepare($query);
+        return $stmt->execute([$data['id'], $data['name'], $data['lastname']]);
     }
 
 }

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="util\bootstrap\css\bootstrap.min.css" rel="stylesheet">
-    <script src="util\bootstrap\js\bootstrap.min.js"></script>
+    <link href="..\util\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+    <script src="..\util\bootstrap\js\bootstrap.min.js"></script>
 </head>
 <body>
   
     <?php 
-        require_once 'controllers/UsuarioController.php';
+        require_once __DIR__ . '/../controllers/UsuarioController.php';
 
         $usuario = new UsuarioController();
 
@@ -32,6 +32,12 @@
                 break;
             case "eliminar":
                 $usuario->delete($id);
+                break;
+            case "create":
+                $usuario->create();
+                break;
+            case "store":
+                $usuario->store($_POST);
                 break;
         }
 

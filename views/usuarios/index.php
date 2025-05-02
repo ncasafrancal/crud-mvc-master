@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1>Lista de Usuarios</h1>
+    <a href="index.php?action=create">New User</a>
     <table class="table">
         <tr>
             <td>ID</td>
